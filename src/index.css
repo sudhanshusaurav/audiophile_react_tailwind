@@ -1,13 +1,84 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    body{
+        font-size: 0.9375rem;
+        line-height: 1.5625rem;
+    }
+
+    h1{
+        @apply text-4xl md:text-h1;
+        letter-spacing: 2px;
+    }
+
+    h2{
+        @apply text-3xl md:text-h2;
+        letter-spacing: 1.5px;
+    }
+
+    h3{
+        font-size: 2rem;
+        line-height: 2.25rem;
+        letter-spacing: 1.15px;
+    }
+
+    h4{
+        font-size: 1.75rem;
+        line-height: 2.375rem;
+        letter-spacing: 2px;
+    }
+
+    h5{
+        font-size: 1.5rem;
+        line-height: 2.125rem;
+        letter-spacing: 1.7px;
+    }
+
+    h6{
+        font-size: 1.125rem;
+        line-height: 1.5rem;
+        letter-spacing: 1.3px;
+    }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+@layer components{
+    .overline{
+        font-size : 0.875rem;
+        line-height : 1.25rem;
+        letter-spacing: 10px;
+    }
+
+    .subTitle{
+        font-size: 0.8125rem;
+        line-height: 1.5625rem;
+        letter-spacing: 1px;
+    }
+
+    .nav-open{
+        height : 92%;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        background: rgba(0,0,0, 0.5);
+        transition : all 0.2s;
+    }
+
+    .nav{
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition : all 0.2s;
+    }
+
+    .cart{
+        clip-path: polygon(100% 0, 100% 0, 100% 0, 100% 0);
+        transitiom : all 0.2s;
+    }
+
+    .cart-open{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        transition : all 0.2s;
+    }
+}  
+.sticky-top {
+    @apply bg-secondary;
+  }
