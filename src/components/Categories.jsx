@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Headphone from '../assets/shared/desktop/image-headphones.png'
 import Speaker from '../assets/shared/desktop/image-speakers.png'
 import Earphone from '../assets/shared/desktop/image-earphones.png'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import ArrowRight from '../assets/shared/desktop/icon-arrow-right.svg'
 
 function Categories({closeNav}) {

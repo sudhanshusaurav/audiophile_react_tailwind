@@ -11,7 +11,7 @@ function Product({getProduct, productQty, increaseQty, decreaseQty, addToCart}) 
     const [product, setProduct] = useState()
     const [windowWidth, setWindowWidth] = useState(window.innerWidth)
     useEffect(() => {
-        setProduct(getProduct(id))
+        setProduct(() => getProduct(id))
         const handleWindowResize = () => {
             setWindowWidth(window.innerWidth)
         }
