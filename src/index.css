@@ -87,4 +87,11 @@
         background: rgba(0,0,0,0.5);
     }
 
+    .basis50{
+        flex-basis: 50%;
+    }
+    .basis100{
+        flex-basis: 100%;
+    }
+
 }  

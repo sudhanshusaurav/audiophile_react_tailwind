@@ -8,6 +8,19 @@ import { useEffect, useState } from "react";
 import Checkout from "./pages/Checkout";
 
 function App() {
+  const [navOpen, setnavOpen] = useState(false)
+  const [cartOpen, setCartOpen] = useState(false)
+
+  const toggleNavbar = () => {
+    console.log('nnn');
+    setnavOpen(!navOpen)
+}
+
+const toggleCart = () => {
+    setCartOpen(!cartOpen)
+}
+
+
   const [cart, setCart] = useState([])
   const [cartValue, setCartValue] = useState(0)
   const [activeProduct, setActiveProduct] = useState()
@@ -83,7 +96,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header cart={cart} clearCart={clearCart} cartValue={cartValue} updateCart={updateCart}/>
+      <Header cart={cart} clearCart={clearCart} cartValue={cartValue} updateCart={updateCart} toggleCart={toggleCart} toggleNavbar={toggleNavbar} navOpen={navOpen} cartOpen={cartOpen}/>
      <Routes>
        <Route exact path="/" element={<Home />}/>
        <Route path="/headphones" element={<Category name="headphones" products={headphones}/>}></Route>

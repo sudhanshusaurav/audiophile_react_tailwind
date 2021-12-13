@@ -1,7 +1,17 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import {AiOutlineMinus, AiOutlinePlus, AiOutlineClose} from 'react-icons/ai'
-function Cart({cart, clearCart, cartValue, updateCart}) {
+function Cart({cart, clearCart, cartValue, updateCart, toggleCart}) {
+
+    const navigate = useNavigate()
+    const checkout = (param) => {
+        toggleCart()
+        if (param === 'shopping') {
+            navigate('/')
+        }else{
+            navigate(`/checkout`)
+        }
+    }
 
     const renderCart = cart.map(cartItem => {
         console.log(cartItem);
@@ -38,8 +48,8 @@ function Cart({cart, clearCart, cartValue, updateCart}) {
                     <p className='bold'>&#0036; {cartValue}</p>
                 </div>
                 <div className='text-center my-4'>
-                   {cart.length !==0 ? <Link to="/checkout" className='block w-full py-4 bg-primary text-white hover:bg-primaryLight'>CHECKOUT</Link> :
-                    <Link to="/" className='block w-full py-4 bg-primary text-white'>Continue Shopping</Link>}
+                   {cart.length !==0 ? <button onClick={checkout} className='block w-full py-4 bg-primary text-white hover:bg-primaryLight'>CHECKOUT</button> :
+                    <button onClick={() => checkout('shopping')} className='block w-full py-4 bg-primary text-white'>Continue Shopping</button>}
                 </div>
                 </div>
     )

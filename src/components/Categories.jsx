@@ -5,13 +5,13 @@ import Earphone from '../assets/shared/desktop/image-earphones.png'
 import { useNavigate } from 'react-router-dom'
 import ArrowRight from '../assets/shared/desktop/icon-arrow-right.svg'
 
-function Categories({closeNav}) {
+function Categories({toggleNavbar}) {
 
     const navigate = useNavigate()
     const NavToCategory = (link) => {
-        // if (window.innerWidth < 991.98) {
-        //     closeNav()   
-        // }
+        if (window.innerWidth < 991.98) {
+            toggleNavbar()
+        }
         navigate(`/${link}`)
     }
 
