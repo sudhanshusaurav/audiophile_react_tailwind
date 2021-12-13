@@ -9,7 +9,7 @@ function Categories({toggleNavbar}) {
 
     const navigate = useNavigate()
     const NavToCategory = (link) => {
-        if (window.innerWidth < 991.98) {
+        if (window.innerWidth < 991.98 && toggleNavbar) {
             toggleNavbar()
         }
         navigate(`/${link}`)

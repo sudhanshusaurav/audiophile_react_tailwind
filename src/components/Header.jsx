@@ -47,12 +47,12 @@ function Header({cart, clearCart, cartValue, updateCart, toggleCart, toggleNavba
         <div id='header' className="fixed top-0 left-0 z-50 w-full">
             <div className="container flex items-center justify-between w-11/12 border-b lg:w-full border-gray-50 border-opacity-30">
                 <div className="flex items-center">
-                    <div className="lg:hidden" onClick={toggleNavbar}>
+                    <div className="lg:hidden mr-12" onClick={toggleNavbar}>
                         <div className="w-8 h-1 my-1 rounded-lg bg-gray-50"></div>
                         <div className="w-6 h-1 my-1 rounded-lg bg-gray-50"></div>
                         <div className="h-1 my-1 rounded-lg w-7 bg-gray-50"></div>
                     </div>
-                    <Link to="/"><img src={Logo} alt="logo" className="my-6 ml-12 lg:ml-0"/></Link>
+                    <Link to="/"><img src={Logo} alt="logo" className="my-6"/></Link>
                 </div>
                 <div className="hidden lg:block">
                     <Menu/>
