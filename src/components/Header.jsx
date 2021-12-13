@@ -77,9 +77,11 @@ function Header({cart, clearCart, cartValue, updateCart}) {
                     {cart.length!==0 ? <span className='bg-primary text-white inline-block w-4 h-4 text-center text-xs rounded-full absolute -right-3 -top-3'>{cart.length}</span> : ''}
                 </div>
             </div>
-            <div className={`w-full bg-white absolute top-16 left-0 ${cartOpen ? 'cart-open' : 'cart'}`}>
-                <div className="container w-11/12 lg:w-full h-screen">
+            <div className={`w-full absolute transparent-black top-16 md:top-18 left-0 h-screen ${cartOpen ? 'cart-open' : 'cart'}`}>
+                <div className="ml-auto lg:mr-16 h-90% md:h-1/2 bg-white md:w-1/2 overflow-y-scroll">
+                    <div className='container w-11/12 h-full'>
                     <Cart cart={cart} clearCart={clearCart} cartValue={cartValue} updateCart={updateCart}/>
+                    </div>
                 </div>
             </div>
         </div>

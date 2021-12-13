@@ -69,7 +69,7 @@ function Product({getProduct, productQty, increaseQty, decreaseQty, addToCart}) 
         <div>
             <div className='py-9 bg-secondary'></div>
             <div className="container w-11/12 lg:w-full">
-                <button className='mt-4 mb-8' onClick={() => window.history.back()}>Go Back</button>
+                <button className='mt-4 mb-8' onClick={() => window.history.back()}  className="hover:text-primary">Go Back</button>
                 <div>
                 <div className='md:flex items-center gap-8'>
                         <div className='flex-1'>

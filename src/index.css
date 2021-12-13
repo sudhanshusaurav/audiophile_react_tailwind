@@ -78,7 +78,13 @@
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
         transition : all 0.2s;
     }
+
+    .sticky-top {
+        @apply bg-secondary;
+    }
+
+    .transparent-black{
+        background: rgba(0,0,0,0.5);
+    }
+
 }  
-.sticky-top {
-    @apply bg-secondary;
-  }

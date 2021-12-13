@@ -7,7 +7,7 @@ function Cart({cart, clearCart, cartValue, updateCart}) {
         console.log(cartItem);
         return(<>
                 <div key={cartItem.item.name} className='flex items-center justify-between my-4'>
-                    <div className='flex items-center'>
+                    <div className='flex items-center w-1/2'>
                         <Link to=""><img src={cartItem.item.image.mobile} alt="product" className='w-16 rounded-lg'/></Link>
                         <div className='ml-4'>
                             <Link to="">{cartItem.item.name}</Link>
@@ -25,10 +25,10 @@ function Cart({cart, clearCart, cartValue, updateCart}) {
     })
 
     return (
-                <div className='max-h-90% overflow-y-scroll py-4'>
+                <div className='py-4'>
                 <div className='flex items-center justify-between'>
                     <h5>CART ({cart.length})</h5>
-                    <button onClick={clearCart}>Remove All</button>
+                    <button onClick={clearCart} className='hover:text-primary'>Remove All</button>
                 </div>
                 <div className='my-6'>
                 {renderCart}
@@ -38,8 +38,8 @@ function Cart({cart, clearCart, cartValue, updateCart}) {
                     <p className='bold'>&#0036; {cartValue}</p>
                 </div>
                 <div className='text-center my-4'>
-                   {cart.length !==0 ? <button className='block w-full py-4 bg-primary text-white hover:bg-primaryLight'>CHECKOUT</button> :
-                    <Link to="/" className='block w-full py-4 bg-primary text-white hover:bg-primaryLight'>Continue Shopping</Link>}
+                   {cart.length !==0 ? <Link to="/checkout" className='block w-full py-4 bg-primary text-white hover:bg-primaryLight'>CHECKOUT</Link> :
+                    <Link to="/" className='block w-full py-4 bg-primary text-white'>Continue Shopping</Link>}
                 </div>
                 </div>
     )

@@ -9,9 +9,9 @@ function Categories({closeNav}) {
 
     const navigate = useNavigate()
     const NavToCategory = (link) => {
-        if (window.innerWidth < 991.98) {
-            closeNav()   
-        }
+        // if (window.innerWidth < 991.98) {
+        //     closeNav()   
+        // }
         navigate(`/${link}`)
     }
 

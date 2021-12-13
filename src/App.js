@@ -5,6 +5,7 @@ import Category from './pages/Category';
 import {headphones, speakers, earphones, data} from './data';
 import Product from "./pages/Product";
 import { useEffect, useState } from "react";
+import Checkout from "./pages/Checkout";
 
 function App() {
   const [cart, setCart] = useState([])
@@ -89,6 +90,7 @@ function App() {
        <Route path="/speakers" element={<Category name="speakers" products={speakers}/>}></Route>
        <Route path="/earphones" element={<Category name="earphones" products={earphones}/>}></Route>
        <Route path="/product/:id" element={<Product getProduct={getActiveProduct} productQty={activeProductQty} increaseQty={productQtyIncrement} decreaseQty={productQtyDecrement} addToCart={addToCart}/>}></Route>
+       <Route path="/checkout" element={<Checkout cart={cart} cartValue={cartValue}/>}/>
 
      </Routes>
     </div>
