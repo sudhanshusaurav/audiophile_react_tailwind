@@ -25,7 +25,7 @@ function Cart({cart, clearCart, cartValue, updateCart, toggleCart}) {
                         </div>
                     </div>
                     <div>
-                    <div className='bg-greyLight flex items-center py-2 px-4'><span className='hover:text-primary' onClick={() => updateCart(cartItem.item,'minus')}><AiOutlineMinus/></span><span className='mx-4'>{cartItem.qty}</span><span className='hover:text-primary' onClick={() => updateCart(cartItem.item, 'plus')}><AiOutlinePlus/></span></div>
+                    <div className='flex items-center px-4 py-2 bg-greyLight'><span className='hover:text-primary' onClick={() => updateCart(cartItem.item,'minus')}><AiOutlineMinus/></span><span className='mx-4'>{cartItem.qty}</span><span className='hover:text-primary' onClick={() => updateCart(cartItem.item, 'plus')}><AiOutlinePlus/></span></div>
                     </div>
                     <div>
                         <button className='ml-2' onClick={() => updateCart(cartItem.item, 'remove')}><AiOutlineClose/></button>
@@ -35,7 +35,7 @@ function Cart({cart, clearCart, cartValue, updateCart, toggleCart}) {
     })
 
     return (
-                <div className='py-4'>
+                <div className='py-4 cart__wrapper'>
                 <div className='flex items-center justify-between'>
                     <h5>CART ({cart.length})</h5>
                     <button onClick={clearCart} className='hover:text-primary'>Remove All</button>
@@ -47,9 +47,9 @@ function Cart({cart, clearCart, cartValue, updateCart, toggleCart}) {
                     <p>TOTAL</p>
                     <p className='bold'>&#0036; {cartValue}</p>
                 </div>
-                <div className='text-center my-4'>
-                   {cart.length !==0 ? <button onClick={checkout} className='block w-full py-4 bg-primary text-white hover:bg-primaryLight'>CHECKOUT</button> :
-                    <button onClick={() => checkout('shopping')} className='block w-full py-4 bg-primary text-white'>Continue Shopping</button>}
+                <div className='my-4 text-center'>
+                   {cart.length !==0 ? <button onClick={checkout} className='block w-full py-4 text-white bg-primary hover:bg-primaryLight'>CHECKOUT</button> :
+                    <button onClick={() => checkout('shopping')} className='block w-full py-4 text-white bg-primary'>Continue Shopping</button>}
                 </div>
                 </div>
     )

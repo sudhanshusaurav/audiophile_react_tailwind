@@ -42,7 +42,7 @@ function Product({getProduct, productQty, increaseQty, decreaseQty, addToCart}) 
                 <div key={item.slug} className={`text-center ${index%2!==0 ? 'my-16 md:my-0' : ''}`}>
                     <img src={relatedProductImage} alt="item" className='rounded-lg'/>
                     <h4 className='my-3'>{item.name}</h4>
-                    <Link to={`/product/${item.slug}`} className='inline-block py-5 px-10 bg-primary text-white hover:bg-primaryLight'>SEE PRODUCT</Link>
+                    <Link to={`/product/${item.slug}`} className='inline-block px-10 py-5 text-white bg-primary hover:bg-primaryLight'>SEE PRODUCT</Link>
                 </div>    
             </>)
         })
@@ -66,52 +66,52 @@ function Product({getProduct, productQty, increaseQty, decreaseQty, addToCart}) 
             } 
 
     return (
-        <div>
+        <div className='overflow-hidden'>
             <div className='py-9 bg-secondary'></div>
             <div className="container w-11/12 lg:w-full">
                 <button className='mt-4 mb-8' onClick={() => window.history.back()}  className="hover:text-primary">Go Back</button>
                 <div>
-                <div className='md:flex items-center gap-8'>
+                <div className='items-center gap-8 md:flex'>
                         <div className='flex-1'>
                             <img src={productImage} alt="product"className='rounded-lg'/>
                         </div>
                         <div className='flex-1'>
-                            {product.new ? <div className='overline text-primary my-4'>NEW PRODUCT</div> : ''}
-                            <h3 className='uppercase my-4'>{product.name}</h3>
+                            {product.new ? <div className='my-4 overline text-primary'>NEW PRODUCT</div> : ''}
+                            <h3 className='my-4 uppercase'>{product.name}</h3>
                             <p>{product.description}</p>
                             <h5 className='my-4'>&#0036; {product.price}</h5>
                             <div className='flex items-center gap-4'>
-                                <div className='bg-greyLight flex items-center py-4 px-6'><span className='hover:text-primary' onClick={decreaseQty}><AiOutlineMinus/></span><span className='mx-6'>{productQty}</span><span className='hover:text-primary' onClick={increaseQty}><AiOutlinePlus/></span></div>
-                                <button className='inline-block py-4 px-8 bg-primary text-white' onClick={addToCart}>ADD TO CART</button>
+                                <div className='flex items-center px-6 py-4 bg-greyLight'><span className='hover:text-primary' onClick={decreaseQty}><AiOutlineMinus/></span><span className='mx-6'>{productQty}</span><span className='hover:text-primary' onClick={increaseQty}><AiOutlinePlus/></span></div>
+                                <button className='inline-block px-8 py-4 text-white bg-primary' onClick={addToCart}>ADD TO CART</button>
                             </div>  
                         </div>
                     </div>
-                    <div className="lg:flex gap-20 items-center justify-between">
+                    <div className="items-center justify-between gap-20 lg:flex">
                         <div className='my-20 lg:w-2/3'>
                             <h4 className='mb-4'>FEATURES</h4>
                             <p>{product.features}</p>
                         </div>
-                        <div className='my-20 md:flex lg:block justify-between flex-1'>
-                            <h4 className='mb-4 flex-1'>IN THE BOX</h4>
+                        <div className='justify-between flex-1 my-20 md:flex lg:block'>
+                            <h4 className='flex-1 mb-4'>IN THE BOX</h4>
                             <ul className='flex-1'>{renderContent}</ul>
                         </div>
                     </div>
-                    <div className='md:flex items-center gap-4 justify-center'>
+                    <div className='items-center justify-center gap-4 md:flex'>
                         <div>
                             <div>
-                                <img src={firstImage} alt="gallery" className='rounded-lg my-4' />
+                                <img src={firstImage} alt="gallery" className='my-4 rounded-lg' />
                             </div>
                             <div>
-                                <img src={secondImage} alt="gallery" className='rounded-lg my-4' />
+                                <img src={secondImage} alt="gallery" className='my-4 rounded-lg' />
                             </div>
                         </div>
                         <div>
-                            <img src={thirdImage} alt="gallery" className='rounded-lg my-4' />
+                            <img src={thirdImage} alt="gallery" className='my-4 rounded-lg' />
                         </div>
                     </div>
-                    <div className='text-center my-20'>
+                    <div className='my-20 text-center'>
                         <h4>YOU MAY ALSO LIKE</h4>
-                         <div className='my-4 md:flex gap-4 items-center'>{renderRelatedProduct}</div>
+                         <div className='items-center gap-4 my-4 md:flex'>{renderRelatedProduct}</div>
                     </div>
                 </div>
             </div>

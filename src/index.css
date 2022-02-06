@@ -51,6 +51,16 @@
         letter-spacing: 10px;
     }
 
+    .home__category__wrapper{
+        @apply relative;
+    }
+
+    .home__category__wrapper::after{
+        content: '';
+        z-index: -1;
+        @apply absolute top-0 left-0 w-1/2 h-full bg-primaryLight opacity-10;
+    }
+
     .subTitle{
         font-size: 0.8125rem;
         line-height: 1.5625rem;
@@ -80,7 +90,7 @@
     }
 
     .sticky-top {
-        @apply bg-secondary;
+        background: #191919;
     }
 
     .transparent-black{
